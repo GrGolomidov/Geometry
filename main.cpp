@@ -66,11 +66,11 @@ double square_circle(figure_circle circle, const double PI)
 
 std::size_t len_str(char* str)
 {
-	std::size_t size = 0;
-	for(size_t i = 0; str[i] != '\0'; i++) {
-		size++;
-	}
-	return size;
+    std::size_t size = 0;
+    for (size_t i = 0; str[i] != '\0'; i++) {
+        size++;
+    }
+    return size;
 }
 
 int main()
@@ -81,18 +81,17 @@ int main()
 
     char str[100];
     std::cin.getline(str, 100);
-	std::size_t size = len_str(str);
+    std::size_t size = len_str(str);
     std::size_t i = 0;
     std::size_t begin_word, end_word;
     skip_space(str, i);
     check_name_figure(str, i, begin_word, end_word);
-    int figure = name_figure(
-            str, begin_word, end_word); // 1 - circle
+    int figure = name_figure(str, begin_word, end_word); // 1 - circle
     skip_space(str, i);
     if (figure != 1) {
-		std::cout << "Error name figure" << std::endl;
-		return 0;
-	}
+        std::cout << "Error name figure" << std::endl;
+        return 0;
+    }
     if (str[i] != '(') {
         std::cout << "missing (" << std::endl;
         return 0;
@@ -110,9 +109,9 @@ int main()
     for (std::size_t j = 0; ((str[i] != ' ') && (str[i] != ',')); i++, j++) {
         coordinate_y[j] = str[i];
     }
-//circle(0 0, 1.5)
+    // circle(0 0, 1.5)
     circle.vertex.y = std::strtod(coordinate_y, &EndPtr);
-	skip_space(str, i);
+    skip_space(str, i);
     if (str[i] != ',') {
         std::cout << "missing ," << std::endl;
         return 0;
@@ -130,14 +129,13 @@ int main()
         return 0;
     }
     i++;
-  	skip_space(str, i);
+    skip_space(str, i);
     if (i != size) {
-    	std::cout << "There are extraneous characters after )" << std::endl;
-		return 0;
-	}
-    std::cout << "Perimetr circle: "
-              << perimetr_circle(circle, PI) << std::endl;
-    std::cout << "Square circle: " << square_circle(circle, PI)
+        std::cout << "There are extraneous characters after )" << std::endl;
+        return 0;
+    }
+    std::cout << "Perimetr circle: " << perimetr_circle(circle, PI)
               << std::endl;
+    std::cout << "Square circle: " << square_circle(circle, PI) << std::endl;
     return 0;
 }
