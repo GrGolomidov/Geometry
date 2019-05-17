@@ -1,13 +1,13 @@
-all: bin/geometry
+all: bin/main
 
-bin/geometry: build/src/main.o build/src/calculation.o
-	g++ -Wall -Werror build/src/main.o build/src/calculation.o -o bin/geometry
+bin/main: build/main.o build/calculation.o bin
+	g++ -Wall -Werror build/main.o build/calculation.o -o bin/main
 
-build/src/main.o: src/main.c
-	g++ -Wall -Werror -c src/main.c -o build/src/main.o
+build/main.o: src/main.cpp build
+	g++ -Wall -Werror -c src/main.cpp -o build/main.o
 
-build/src/calculation.o: src/calculation.c
-	g++ -Wall -Werror -c src/calculation.c -o build/src/calculation.o
+build/calculation.o: src/calculation.cpp
+	g++ -Wall -Werror -c src/calculation.cpp -o build/calculation.o
 
 .PHONY : clean
 
