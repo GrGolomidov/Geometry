@@ -1,17 +1,4 @@
-#include <cstring>
-#include <iostream>
-#include <string>
-#include <vector>
-
-struct pointer {
-    double x;
-    double y;
-};
-
-struct figure_circle {
-    pointer vertex;
-    double radius;
-};
+#include "calculation.h"
 
 void skip_space(char* str, std::size_t& i)
 {
@@ -51,18 +38,6 @@ int name_figure(char* str, std::size_t begin_word, std::size_t end_word)
         return -1;
     }
 }
-// double strtod(const char *nptr, char **endptr);// symbol to double
-// int strcmp(const char *s1, const char *s2);
-
-double perimetr_circle(figure_circle circle, const double PI)
-{
-    return (2 * PI * circle.radius);
-}
-
-double square_circle(figure_circle circle, const double PI)
-{
-    return (PI * circle.radius * circle.radius);
-}
 
 std::size_t len_str(char* str)
 {
@@ -75,8 +50,6 @@ std::size_t len_str(char* str)
 
 int main()
 {
-    const double PI = 3.1415926535;
-    // figure_triangle triangle;
     figure_circle circle;
 
     char str[100];
@@ -134,8 +107,7 @@ int main()
         std::cout << "There are extraneous characters after )" << std::endl;
         return 0;
     }
-    std::cout << "Perimetr circle: " << perimetr_circle(circle, PI)
-              << std::endl;
+    std::cout << "Perimetr circle: " << perimetr_circle(circle, PI) << std::endl;
     std::cout << "Square circle: " << square_circle(circle, PI) << std::endl;
     return 0;
 }
