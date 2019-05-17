@@ -54,6 +54,10 @@ int main()
 
     char str[100];
     std::cin.getline(str, 100);
+    if (str[0] == '\n') {
+		std::cout << "Empty string" << std::endl;
+		return 0;
+	}
     std::size_t size = len_str(str);
     std::size_t i = 0;
     std::size_t begin_word, end_word;
