@@ -52,7 +52,7 @@ int main()
 {
     figure_circle circle;
 
-    char str[100] = {};
+    char str[100];
     std::cin.getline(str, 100);    
     std::size_t size = len_str(str);
     std::size_t i = 0;
