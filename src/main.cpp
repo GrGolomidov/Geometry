@@ -76,14 +76,14 @@ int main()
     for (std::size_t j = 0; str[i] != ' '; i++, j++) {
         coordinate_x[j] = str[i];
     }
-    circle.vertex.x = std::strtod(coordinate_x, &EndPtr);
+    circle.vertex.x = strtod(coordinate_x, &EndPtr);
     skip_space(str, i);
     char coordinate_y[100] = {};
     for (std::size_t j = 0; ((str[i] != ' ') && (str[i] != ',')); i++, j++) {
         coordinate_y[j] = str[i];
     }
     // circle(0 0, 1.5)
-    circle.vertex.y = std::strtod(coordinate_y, &EndPtr);
+    circle.vertex.y = strtod(coordinate_y, &EndPtr);
     skip_space(str, i);
     if (str[i] != ',') {
         std::cout << "missing ," << std::endl;
@@ -95,7 +95,7 @@ int main()
     for (std::size_t j = 0; ((str[i] != ' ') && (str[i] != ')')); i++, j++) {
         radius_circle[j] = str[i];
     }
-    circle.radius = std::strtod(radius_circle, &EndPtr);
+    circle.radius = strtod(radius_circle, &EndPtr);
     skip_space(str, i);
     if (str[i] != ')') {
         std::cout << "missing )" << std::endl;
