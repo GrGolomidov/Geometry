@@ -1,6 +1,7 @@
 #ifndef CALCULATION_H
 #define CALCULATION_H
 
+#include <cstdlib>
 #include <cstring>
 #include <iostream>
 #include <string>
