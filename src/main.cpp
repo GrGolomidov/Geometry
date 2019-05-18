@@ -41,20 +41,20 @@ int main()
     figure_circle circle;
 
     char str[100];
-    std::cin.getline(str, 100);    
+    std::cin.getline(str, 100);
     std::size_t size = std::strlen(str);
     if (size == 0) {
-		std::cout << "Empty str" << std::endl;
-		return 0;
-	}
-    
+        std::cout << "Empty str" << std::endl;
+        return 0;
+    }
+
     std::size_t i = 0;
     std::size_t begin_word, end_word;
     skip_space(str, i);
-        
+
     check_name_figure(str, i, begin_word, end_word);
     int figure = name_figure(str, begin_word, end_word); // 1 - circle
-    
+
     skip_space(str, i);
     if (figure != 1) {
         std::cout << "Error name figure" << std::endl;
@@ -103,7 +103,8 @@ int main()
         std::cout << "There are extraneous characters after )" << std::endl;
         return 0;
     }
-    std::cout << "Perimetr circle: " << perimetr_circle(circle, PI) << std::endl;
+    std::cout << "Perimetr circle: " << perimetr_circle(circle, PI)
+              << std::endl;
     std::cout << "Square circle: " << square_circle(circle, PI) << std::endl;
     return 0;
 }
